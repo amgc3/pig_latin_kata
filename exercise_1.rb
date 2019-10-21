@@ -11,7 +11,12 @@
 # Assume your user is a developer — e.g. you don't need to write a user interface.
 
 def pig_latin(word)
-
+  vowels = %w[a e i o u]
+  if vowels.include?(word[0])
+    word << "way"
+  else
+    word = word.delete(word[0]) << word[0] + "ay"
+  end
 end
 
 ## Tests:

@@ -8,8 +8,17 @@
 # Still assume the words are lowercase.
 
 def pig_latin(word)
-
+  vowels = %w[a e i o u]
+  if vowels.include?(word[0])
+    word << "way"
+  else
+    while !vowels.include?(word[0])
+      word = word.delete(word[0]) << word[0]
+    end
+    word = word << "ay"
+  end
 end
+
 
 ## Tests:
 
