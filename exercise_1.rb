@@ -9,9 +9,8 @@
 # Don't worry about handling multiple consonants
 # Assume the words are lowercase.
 # Assume your user is a developer — e.g. you don't need to write a user interface.
-
 def pig_latin(word)
-  vowels = %w[a e i o u]
+  vowels = %w[a e i o u A E I O U]
   if vowels.include?(word[0])
     word << "way"
   else

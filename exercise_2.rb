@@ -8,7 +8,7 @@
 # Still assume the words are lowercase.
 
 def pig_latin(word)
-  vowels = %w[a e i o u]
+  vowels = %w[a e i o u A E I O U]
   if vowels.include?(word[0])
     word << "way"
   else

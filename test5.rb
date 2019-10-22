@@ -1,13 +1,3 @@
-# Develop your work so far to preserve the existing capitalisation of the word
-# e.g. Dog  -> Ogday
-#      cram -> amcray
-#
-# Assume words either start with a capital letter or don't — don't worry about
-# other formats
-# def is_upper(letter)
-#   letter = letter.capitalize
-# end
-
 def pig_latin(word)
   vowels = %w[a e i o u A E I O U]
   if vowels.include?(word[0])
@@ -18,19 +8,19 @@ def pig_latin(word)
   else
     while !vowels.include?(word[0])
       if word[0] == word[0].capitalize
+        # while !vowels.include?
         word = word.delete(word[0]) << word[0].downcase
         word = word.capitalize
-        break
+        puts word
       else
         word = word.delete(word[0]) << word[0]
+        puts word
       end
     end
     word = word << "ay"
+    puts word
   end
+  puts word
 end
 
-## Tests:
-
-require_relative './helpers/assert_equal'
-assert_equal(pig_latin('Dog'), 'Ogday')
-assert_equal(pig_latin('cram'), 'amcray')
+pig_latin("The")
